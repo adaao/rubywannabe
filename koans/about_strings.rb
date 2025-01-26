@@ -13,26 +13,26 @@ class AboutStrings < Neo::Koan
 
   def test_use_single_quotes_to_create_string_with_double_quotes
     string = 'He said, "Go Away."'
-    assert_equal __, string
+    assert_equal "He said, \"Go Away.\"", string
   end
 
   def test_use_double_quotes_to_create_strings_with_single_quotes
     string = "Don't"
-    assert_equal __, string
+    assert_equal "Don't", string
   end
 
   def test_use_backslash_for_those_hard_cases
     a = "He said, \"Don't\""
     b = 'He said, "Don\'t"'
-    assert_equal __, a == b
+    assert_equal true, a == b
   end
 
   def test_use_flexible_quoting_to_handle_really_hard_cases
     a = %(flexible quotes can handle both ' and " characters)
     b = %!flexible quotes can handle both ' and " characters!
     c = %{flexible quotes can handle both ' and " characters}
-    assert_equal __, a == b
-    assert_equal __, a == c
+    assert_equal true, a == b
+    assert_equal true, a == c
   end
 
   def test_flexible_quotes_can_handle_multiple_lines
